@@ -10,16 +10,6 @@ def create_list(k=100, max_val=None):
     return my_list
 
 
-def timeit(func):
-    def timeit_wrapper(*args, **kwargs):
-        start_time = time.perf_counter()
-        result = func(*args, **kwargs)
-        end_time = time.perf_counter()
-        total_time = (end_time - start_time) * 1000
-        print(f'Function {args[0].__name__} Took {total_time:.1f} ms')
-        return result
-    return timeit_wrapper
-
 def multi_run(fn, my_list, values_to_search):
     results = []
     for value in values_to_search:
@@ -32,17 +22,17 @@ def main():
     max_val = k * 3
 
     my_list = create_list(k=k, max_val=max_val)
+    to_search = create_list(k=k, max_val=max_val)
 
-    # Example query
-    value = 7 # 7
-    idx  = linear_search(my_list, value)
-    print(f"Index of {value} is {idx}")
-
-    # manual timing
-    multi_run(linear_search, my_list, create_list(k=k, max_val=max_val))
-
-
-
-
+    while(True):
+        choice = random.randint(0, 1)
+        if choice == 0:
+            print("Run Linear")
+            multi_run(linear_search, my_list, to_search)
+        else:
+            print("Run Binary")
+            multi_run(binary_search, my_list, to_search)
+        
+# sudo py-spy record -o profile.svg -- python scripts/run_pyspy_demo.py
 if __name__ == "__main__":
     main()
