@@ -1,0 +1,23 @@
+[project]
+name = "simpleprofile"
+version = "0.0.1"
+description = "Test out profiling"
+authors = [
+    {name = "Jeremy Castagno", email="JeremyBYU@gmail.com"}
+]
+requires-python= ">=3.9"
+dependencies = ["pytest", "pytest-benchmark", "py-spy"]
+
+
+[build-system]
+requires = [
+    "setuptools >= 35.0.2",
+]
+build-backend = "setuptools.build_meta"
+
+
+[tool.pytest.ini_options]
+addopts = "-rPx -v"
+testpaths = [
+    "tests"
+]
