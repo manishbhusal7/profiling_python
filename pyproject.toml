@@ -6,7 +6,7 @@ authors = [
     {name = "Jeremy Castagno", email="JeremyBYU@gmail.com"}
 ]
 requires-python= ">=3.9"
-dependencies = ["pytest", "pytest-benchmark", "py-spy"]
+dependencies = ["pytest", "pytest-benchmark", "py-spy", "pytest-cov", "black"]
 
 
 [build-system]
