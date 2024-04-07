@@ -1,3 +1,3 @@
-# CISC240-SimpleProfile
+# Profiling in Python 
 
 

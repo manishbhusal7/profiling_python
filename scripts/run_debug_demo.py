@@ -4,14 +4,14 @@ from typing import List
 
  #  There is a bug in here
 def add_num(my_list: List[int]):
-    value = input("Add a number: ")
+    value = int(input("Add a number: "))
     insert(my_list, value)
 
 # some bugs in here
 def search_num(my_list: List[int]):
     command = input("Choose a search method: linear, binary, custom: ")
     value = input("Choose a number to search for: ")
-    if command == "lnear":
+    if command == "linear":
         index = linear_search(my_list, value)
     elif command == "binary":
         index = binary_search(my_list, value)

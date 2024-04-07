@@ -36,13 +36,13 @@ def custom_binary_search(my_list:List[int], value:int) -> int:
     hi = len(my_list) - 1
     lo = 0
     while (lo <= hi):
-        mid = (hi + lo) / 2
+        mid = (hi + lo) // 2
         if my_list[mid] == value:
             return mid
         elif value < my_list[mid]:
             hi = mid - 1
         else:
-            lo = mid
+            lo = mid+1
     return -1
 
 
